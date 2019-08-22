@@ -17,8 +17,8 @@ WHERE cohorts.name = '${process.argv[2] || 'JUL02'}'
 ORDER BY teacher;
 `)
 .then(res => {
-  res.rows.forEach(user => {
-    console.log(`${user.cohort}: ${user.teacher}`);
+  res.rows.forEach(row => {
+    console.log(`${row.cohort}: ${row.teacher}`);
   })
 })
 .catch(err => console.error('query error', err.stack));
